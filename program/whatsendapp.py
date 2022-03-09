@@ -15,16 +15,19 @@ __        ___           _                      _    _
 okno = tk.Tk()
 okno.title("WhatsendApp")
 
+
 # definice pro tlačítko zvřít
 def exit():
     sys.exit(0)
 # definice tlačítka odeslat
 def odeslat():
+    top = tk.Toplevel()
     c = cislo.get()
     z = zprava.get()
     h = int(hodina.get())
     m = int(minuta.get())
-    print(pywhatkit.sendwhatmsg(c, z, h, m))
+    Label(top, text=pywhatkit.sendwhatmsg(c, z, h, m))
+    
     #pywhatkit.sendwhatmsg("+420775775488", "Test", 13, 5)
 
 # tel číslo
@@ -54,7 +57,7 @@ minuta.grid(row=6, column=1)
 # tlacitko odeslat
 tlacirko_odeslat = tk.Button(okno, text="Odeslat", command=odeslat).grid(row=7, column=0)
 # tlacitko konec
-tlacitko_konec = tk.Button(okno, text = "Zavřít", command = exit).grid(row=7, column=1)
+tlacitko_konec = tk.Button(okno, text="Zavřít", command=exit).grid(row=7, column=1)
 
 # metoda hlavního okna mainloop, udržuje okno otevřené
 okno.mainloop()
