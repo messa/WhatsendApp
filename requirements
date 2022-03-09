@@ -1,0 +1,5 @@
+-pywhatkit
+  https://pypi.org/project/pywhatkit/
+  pip3 install pywhatkit
+
+-Be logged on to the Whatsapp web
